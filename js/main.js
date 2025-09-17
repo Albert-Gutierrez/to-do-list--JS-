@@ -14,8 +14,8 @@ function createToDoItem(textoItem) {
 
     //creamos el nodo hijo del inpout y le agregamos el type checkbox
     const checkbox = document.createElement("input");
-    // checkbox.type = "checkbox";
     checkbox.setAttribute("type", "checkbox");
+    // checkbox.type = "checkbox"; este es resumido ya le asigna directamente el atributo al type
 
     //creamos el siguiente nodo hijo - parrafo
     const p = document.createElement("p");
@@ -34,9 +34,4 @@ function createToDoItem(textoItem) {
 
     //utilizamos el return para dar respuesta del elemento creado ya que lo usaremos en otra funcion mas adelante
     return item;
-    
-
-
-
-
 }
