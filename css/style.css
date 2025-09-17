@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root {
+    --primary-color: #3b11e5;
+    --gray-color: #f7f7f7;
+    --white-color: #fff;
+    --dark-color: #262626;
+    --fs-title: 18px;
+    --fs-text: 16px;
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#global-content {
+    background-color: var(--gray-color);
+    margin-top: 50px;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+hr{
+    margin:30px 0
+    }
+
+/* Encabezados */
+h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #333;
+}
+
+/* Formulario de añadir ítem */
+form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+form input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0 15px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+/* Ítems de la lista */
+.item-to-do {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f8f9fa;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-left: 5px solid #007bff;
+    transition: background-color 0.2s ease;
+}
+
+.item-to-do.completed {
+    border-left-color: #6c757d;
+    background-color: #e9ecef;
+}
+
+.item-to-do p {
+    flex: 1;
+    margin: 0 10px;
+    color: #333;
+}
+
+.item-to-do input[type="checkbox"] {
+    transform: scale(1.2);
+}
+
+.item-to-do button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+item-to-do button:hover {
+    background-color: #c82333;
+}
+
+/* Separadores */
+hr {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 30px 0;
+}
+
+
+
+
+
+
+
+
