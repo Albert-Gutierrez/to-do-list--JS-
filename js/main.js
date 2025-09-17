@@ -1,5 +1,5 @@
 //creamos las constantes globales para los elementos princiupales son globales por que no estan dentro de una funcion
-const input = document.getElemtById("to-do-input");
+const input = document.getElementById("to-do-input");
 const addBtn = document.getElementById("add-btn");
 const toDoList = document.getElementById("cont-to-do-list");
 const completedList = document.getElementById("cont-completed-list");
@@ -35,3 +35,18 @@ function createToDoItem(textoItem) {
     //utilizamos el return para dar respuesta del elemento creado ya que lo usaremos en otra funcion mas adelante
     return item;
 }
+
+//detectamos el click o el evento click sobre el boton agregar con un evento de escuccha o listener
+//para que a partir de este evento se agregue la tarea dentro del contenedor cont-to-do-list
+addBtn.addEventListener('click', ()=> {
+    const textoItem = input.value.trim();//se guarda lo que el usuario ingresa
+    if (textoItem=="") {
+        alert ="no se puede crear una tarea vacia";
+        
+    } else {
+        const newItem = createToDoItem(textoItem);
+        toDoList.appendChild(newItem);
+        input.value = "";
+        
+    }
+});

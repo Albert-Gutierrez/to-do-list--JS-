@@ -2,7 +2,7 @@
 
 
 :root {
-    --primary-color: #3b11e5;
+    --primary-color: #5931f8ce;
     --gray-color: #f7f7f7;
     --white-color: #fff;
     --dark-color: #262626;
@@ -12,7 +12,7 @@
 
 body {
     font-family: "Raleway", sans-serif;
-    background-color: #f4f4f4;
+    background-color: var(--primary-color);
     margin: 0;
     padding: 0;
     display: flex;
@@ -29,11 +29,8 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-hr{
-    margin:30px 0
-    }
-
 /* Encabezados */
+
 h2 {
     margin-top: 30px;
     margin-bottom: 15px;
@@ -79,7 +76,7 @@ form button:hover {
     padding: 10px 15px;
     margin-bottom: 10px;
     border-radius: 5px;
-    border-left: 5px solid #007bff;
+    /* border-left: 5px solid #007bff; */
     transition: background-color 0.2s ease;
 }
 
