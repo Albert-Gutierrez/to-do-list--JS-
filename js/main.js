@@ -69,17 +69,32 @@ function eventsToItem(item) {
         if (checkbox.checked) {
             completedList.appendChild(item);
         }
-        else{
+        else {
             toDoList.appendChild(item);
         }
 
     });
 
-
-    deleteBtn.addEventListener('click', () =>{
+    deleteBtn.addEventListener('click', () => {
         item.remove();
     })
-
-
-
 }
+
+
+const bntStyles = document.getElementById("change-styles");
+
+bntStyles.addEventListener('click', () => {
+    const linkCss = document.getElementById("enlace-estilos");
+
+    if (linkCss.getAttribute('href') === 'css/style.css') {
+        
+        linkCss.setAttribute("href", 'css/style-dia.css');
+        bntStyles.textContent = "Modo Noche";
+    }
+    else {
+        linkCss.setAttribute("href", "css/style.css");
+        bntStyles.textContent = "Modo dia";
+    }
+
+
+});
