@@ -2,7 +2,7 @@
 
 
 :root {
-    --primary-color: #5931f8ce;
+    --primary-color: #000000ce;
     --gray-color: #f7f7f7;
     --white-color: #fff;
     --dark-color: #262626;
@@ -37,6 +37,15 @@ h2 {
     font-size: 20px;
     color: #333;
 }
+.h2-add-item{
+    color: blue;
+}
+.h2-to-do{
+    color: red;
+}
+.h2-completed{
+    color: #0f882b;
+}
 
 /* Formulario de añadir ítem */
 form {
@@ -53,7 +62,7 @@ form input {
 }
 
 form button {
-    background-color: #28a745;
+    background-color: #0f882b;
     color: white;
     border: none;
     padding: 0 15px;
@@ -64,7 +73,7 @@ form button {
 }
 
 form button:hover {
-    background-color: #218838;
+    background-color: #45cb62;
 }
 
 /* Ítems de la lista */
@@ -76,12 +85,11 @@ form button:hover {
     padding: 10px 15px;
     margin-bottom: 10px;
     border-radius: 5px;
-    /* border-left: 5px solid #007bff; */
     transition: background-color 0.2s ease;
 }
 
 .item-to-do.completed {
-    border-left-color: #6c757d;
+    border-left-color: #000000;
     background-color: #e9ecef;
 }
 

@@ -1,11 +1,12 @@
-//creamos las constantes globales para los elementos princiupales son globales por que no estan dentro de una funcion
+//creamos las constantes globales para los elementos princiupales, son globales por que no estan dentro de una funcion
 const input = document.getElementById("to-do-input");
 const addBtn = document.getElementById("add-btn");
 const toDoList = document.getElementById("cont-to-do-list");
 const completedList = document.getElementById("cont-completed-list");
 
 //creamos la funcion que nos permite crear una nueva tarea  apartidr del formulario
-//toda etiqueta que vamo a crear es a partir de la maqueta HTML pre existente
+//toda etiqueta que vamos a crear es a partir de la maqueta HTML pre existente
+//esta funcion solo crea la estructura html y la deja en un "limbo" para luego ser agregada  mediante un appenchild
 function createToDoItem(textoItem) {
 
     //creamos el nodo o elemento padre o contenedor
@@ -25,9 +26,11 @@ function createToDoItem(textoItem) {
     //creamos el ultimo nodo hijo, el boton de eliminar
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "x";
-    
+
+
+
     //-------------------------------------------------------------------------------------------------------------------------
-    //Ensamblamos dentro del nodo padre sus nodos hijos, es decir la estructura de la tarea
+    //agregamos mediante appen childEnsamblamos dentro del nodo padre sus nodos hijos, es decir la estructura de la tarea
     item.appendChild(checkbox);
     item.appendChild(p);
     item.appendChild(deleteBtn);
@@ -36,17 +39,47 @@ function createToDoItem(textoItem) {
     return item;
 }
 
+
+
 //detectamos el click o el evento click sobre el boton agregar con un evento de escuccha o listener
 //para que a partir de este evento se agregue la tarea dentro del contenedor cont-to-do-list
-addBtn.addEventListener('click', ()=> {
+addBtn.addEventListener('click', () => {
     const textoItem = input.value.trim();//se guarda lo que el usuario ingresa
-    if (textoItem=="") {
-        alert ="no se puede crear una tarea vacia";
-        
+    if (textoItem == "") {
+        alert("no se puede crear una tarea vacia");
+
     } else {
         const newItem = createToDoItem(textoItem);
         toDoList.appendChild(newItem);
+        eventsToItem(newItem);
         input.value = "";
-        
     }
 });
+
+
+//la siguiente funcion nos permitira agregar el funcionamiento principal sobre las tareas es decir marcar la tarea como realizad o completada o en dado caso eliminarla (ageragr-eliminar)
+function eventsToItem(item) {
+    //utlizamos quiery selector para capturar el input y el button que estan dentro del item
+    const checkbox = item.querySelector("input");
+    const deleteBtn = item.querySelector("button");
+
+    //marcar como completada la tarea en el checkbox
+    checkbox.addEventListener('change', () => {
+
+        if (checkbox.checked) {
+            completedList.appendChild(item);
+        }
+        else{
+            toDoList.appendChild(item);
+        }
+
+    });
+
+
+    deleteBtn.addEventListener('click', () =>{
+        item.remove();
+    })
+
+
+
+}
