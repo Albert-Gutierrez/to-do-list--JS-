@@ -56,6 +56,12 @@ addBtn.addEventListener('click', () => {
     }
 });
 
+// Detectar la tecla Enter en el input para agregar tareas
+input.addEventListener('keydown', e => {
+    if (e.key === "Enter") addBtn.click();
+});
+
+
 
 //la siguiente funcion nos permitira agregar el funcionamiento principal sobre las tareas es decir marcar la tarea como realizad o completada o en dado caso eliminarla (ageragr-eliminar)
 function eventsToItem(item) {
@@ -87,7 +93,6 @@ bntStyles.addEventListener('click', () => {
     const linkCss = document.getElementById("enlace-estilos");
 
     if (linkCss.getAttribute('href') === 'css/style.css') {
-        
         linkCss.setAttribute("href", 'css/style-dia.css');
         bntStyles.textContent = "Modo Noche";
     }
